@@ -18,13 +18,16 @@ function isText(str){
 }
 function getTextNoSpace(tex){    
     let a = true;
-    let tex2 = ""
-    for(let i = 0; i < tex.length; i++){
-        if(!(tex[i] == " " && a)){
-            tex2 += tex[i]
-        }
-    }
-    return tex2
+        let tex2 = ""
+        for(let i = 0; i < tex.length; i++){
+            if(a && tex[i] == " "){
+                continue;
+            }else{
+                a = false
+                tex2 += tex[i]
+            }
+        } 
+        return tex2
 }
 function createTask(){
     let taskN = inputName.value
